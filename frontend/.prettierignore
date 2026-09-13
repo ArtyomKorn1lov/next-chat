@@ -1,0 +1,8 @@
+/.idea/
+/node_modules/
+/dist/
+/.next/
+/public/
+/outputs/
+*.min.js
+*-lock.*
