@@ -1,0 +1,6 @@
+.git*
+backend/*
+frontend/*
+mobile/*
+docker/*
+docs/*
