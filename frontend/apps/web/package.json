@@ -1,0 +1,25 @@
+{
+  "name": "@app/web",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start --port 3001",
+    "typecheck": "next typegen && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2",
+    "@repo/typescript-config": "workspace:*"
+  },
+  "dependencies": {
+    "@repo/next-config": "workspace:*",
+    "@repo/shared": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "next": "16.3.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  }
+}
