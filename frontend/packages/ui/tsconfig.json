@@ -1,12 +1,5 @@
 {
   "extends": "@repo/typescript-config/tsconfig.json",
-  "compilerOptions": {
-    "paths": {
-      "@repo/ui*": [
-        "./src/*"
-      ]
-    }
-  },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx"

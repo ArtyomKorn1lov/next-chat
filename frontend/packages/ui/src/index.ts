@@ -1,1 +1,5 @@
-export { default as Button } from '@repo/ui/Button';
+import Button from '@repo/ui/Button';
+
+export {
+    Button,
+}

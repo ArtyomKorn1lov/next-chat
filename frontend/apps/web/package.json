@@ -3,14 +3,15 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3001",
+    "dev": "next dev --port 3000",
     "build": "next build",
-    "start": "next start --port 3001",
+    "start": "next start --port 3000",
     "typecheck": "next typegen && tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "26.6.5",
     "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "typescript": "7.0.2",
     "@repo/typescript-config": "workspace:*"
   },

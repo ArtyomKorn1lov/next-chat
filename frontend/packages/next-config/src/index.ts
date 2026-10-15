@@ -6,7 +6,7 @@ const createNextConfig = (overrides: NextConfig = {}): NextConfig => {
     poweredByHeader: false,
     ...overrides,
     transpilePackages: [
-      ...new Set(['@repo/ui', '@repo/shared', ...(overrides.transpilePackages ?? [])]),
+      ...['@repo/ui', '@repo/shared', ...(overrides.transpilePackages ?? [])],
     ],
   };
 };
