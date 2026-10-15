@@ -5,9 +5,6 @@ const createNextConfig = (overrides: NextConfig = {}): NextConfig => {
     reactStrictMode: true,
     poweredByHeader: false,
     ...overrides,
-    transpilePackages: [
-      ...['@repo/ui', '@repo/shared', ...(overrides.transpilePackages ?? [])],
-    ],
   };
 };
 
