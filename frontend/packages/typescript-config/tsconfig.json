@@ -26,5 +26,7 @@
       "@app/web/*": ["../../apps/web/*"],
       "@app/admin/*": ["../../apps/admin/*"]
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mts"],
+  "exclude": ["node_modules"]
 }

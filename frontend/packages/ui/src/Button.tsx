@@ -1,25 +1,26 @@
 'use client';
 
-import * as React from "react";
-import { FormatHelper } from "@repo/shared";
+import { FormatHelper } from '@repo/shared';
+import type * as React from 'react';
 
 type ButtonProps = {
-    children: React.ReactNode;
+  children: React.ReactNode;
 };
 
-const Button = ({children}: ButtonProps) => {
-    const onClick = () => {
-        console.log(FormatHelper.normalizePhone('+ 7 999 999 99 99'));
-    }
+const Button = ({ children }: ButtonProps) => {
+  const onClick = () => {
+    console.log(FormatHelper.normalizePhone('+ 7 999 999 99 99'));
+  };
 
-    return (
-        <button
-            style={{display: 'inline-flex', backgroundColor: 'red'}}
-            onClick={onClick}
-        >
-            {children}
-        </button>
-    );
-}
+  return (
+    <button
+      style={{ display: 'inline-flex', backgroundColor: 'red' }}
+      onClick={onClick}
+      type="button"
+    >
+      {children}
+    </button>
+  );
+};
 
 export default Button;

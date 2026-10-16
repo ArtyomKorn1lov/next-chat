@@ -2,13 +2,19 @@
   "name": "next-frontend",
   "version": "1.0.0",
   "description": "Next Js chat",
+  "type": "module",
+  "private": true,
   "scripts": {
     "dev:web": "pnpm --filter @app/web dev",
     "dev:admin": "pnpm --filter @app/admin dev",
     "build:web": "pnpm --filter @app/web build",
     "build:admin": "pnpm --filter @app/admin build",
     "build": "pnpm --recursive build",
-    "typecheck": "pnpm --recursive --if-present run typecheck"
+    "typecheck": "pnpm --recursive --if-present run typecheck",
+    "lint": "biome lint .",
+    "check": "biome check .",
+    "format": "biome format --write .",
+    "fix": "biome check --write ."
   },
   "keywords": [],
   "author": "",
@@ -21,6 +27,7 @@
     }
   },
   "packageManager": "pnpm@12.11.2",
-  "type": "module",
-  "private": true
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15"
+  }
 }

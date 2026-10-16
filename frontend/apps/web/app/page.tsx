@@ -1,6 +1,4 @@
-'use client'
-
-import { Button } from "@repo/ui";
+import { Button } from '@repo/ui';
 
 export default function Home() {
   return <Button>Test Button</Button>;
