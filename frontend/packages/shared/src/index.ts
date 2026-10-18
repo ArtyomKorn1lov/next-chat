@@ -1,3 +1,3 @@
-import * as FormatHelper from '@repo/shared/FormatHelper';
+import * as FormatHelper from '@app/shared/FormatHelper';
 
 export { FormatHelper };

@@ -1,6 +1,6 @@
 'use client';
 
-import { FormatHelper } from '@repo/shared';
+import { FormatHelper } from '@app/shared';
 import type * as React from 'react';
 
 type ButtonProps = {

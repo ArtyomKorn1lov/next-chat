@@ -21,12 +21,10 @@
       }
     ],
     "paths": {
-      "@repo/ui/*": ["../ui/src/*"],
-      "@repo/shared/*": ["../shared/src/*"],
+      "@app/ui/*": ["../ui/src/*"],
+      "@app/shared/*": ["../shared/src/*"],
       "@app/web/*": ["../../apps/web/*"],
       "@app/admin/*": ["../../apps/admin/*"]
     }
-  },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.mts"],
-  "exclude": ["node_modules"]
+  }
 }

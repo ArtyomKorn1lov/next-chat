@@ -1,3 +1,3 @@
-import Button from '@repo/ui/Button';
+import Button from '@app/ui/Button';
 
 export { Button };

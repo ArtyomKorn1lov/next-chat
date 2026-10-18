@@ -1,3 +1,3 @@
-import createNextConfig from '@repo/next-config';
+import createNextConfig from '@app/next-config';
 
 export default createNextConfig();

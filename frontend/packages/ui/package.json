@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@app/ui",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -7,10 +7,10 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@repo/shared": "workspace:*"
+    "@app/shared": "workspace:*"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@app/typescript-config": "workspace:*",
     "typescript": "7.0.2",
     "@types/react": "19.3.0"
   },
