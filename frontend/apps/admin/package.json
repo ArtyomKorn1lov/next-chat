@@ -9,11 +9,16 @@
     "typecheck": "next typegen && tsc --noEmit"
   },
   "devDependencies": {
+    "@app/typescript-config": "workspace:*",
+    "@app/vitest-setup": "workspace:*",
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.8",
     "@types/node": "26.6.5",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "typescript": "7.0.2",
-    "@app/typescript-config": "workspace:*"
+    "typescript": "7.0.2"
   },
   "dependencies": {
     "@app/next-config": "workspace:*",

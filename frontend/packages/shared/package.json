@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@app/typescript-config": "workspace:*",
+    "@app/vitest-setup": "workspace:*",
     "typescript": "7.0.2"
   }
 }
