@@ -1,8 +1,8 @@
 <?php
 
-namespace Package\Chat\Presentation\Controllers\MessageController;
+namespace Package\Chat\Presentation\Controllers;
 
-use Packages\Package\Shared\Controllers\Controller;
+use Package\Shared\Presentation\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 
 class MessageController extends Controller

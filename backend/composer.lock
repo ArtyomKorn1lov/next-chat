@@ -1480,16 +1480,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.10.6",
+            "version": "2.10.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "cb3d6a523587751db4b8e1d0c3945d2d68535bd3"
+                "reference": "8eb53e906fd60c67038d22f1f1cab420ed58b8be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/cb3d6a523587751db4b8e1d0c3945d2d68535bd3",
-                "reference": "cb3d6a523587751db4b8e1d0c3945d2d68535bd3",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/8eb53e906fd60c67038d22f1f1cab420ed58b8be",
+                "reference": "8eb53e906fd60c67038d22f1f1cab420ed58b8be",
                 "shasum": ""
             },
             "require": {
@@ -1583,7 +1583,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-10-30T12:21:38+00:00"
+            "time": "2026-10-31T13:35:37+00:00"
         },
         {
             "name": "league/config",
@@ -2557,17 +2557,22 @@
             "dist": {
                 "type": "path",
                 "url": "packages/chat",
-                "reference": "49d9c7c9c3acc4984ee284efa395dfc74ea72ecf"
+                "reference": "ac51eb23d5d4b230bf6b5c38465e66278fd65483"
             },
             "require": {
-                "illuminate/support": "^13.0",
                 "laravel/framework": "^13.17",
-                "laravel/tinker": "^3.0",
                 "package/shared": "*@dev",
                 "php": "^8.3",
                 "spatie/laravel-package-tools": "^1.93"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Package\\Chat\\ChatServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Package\\Chat\\": "src/",
@@ -2590,16 +2595,21 @@
             "dist": {
                 "type": "path",
                 "url": "packages/shared",
-                "reference": "4df27fa19aa020437b5be84a11b1db7b25ded252"
+                "reference": "38e4ce011aae982adb994fbd13587837596746d8"
             },
             "require": {
-                "illuminate/support": "^13.0",
                 "laravel/framework": "^13.17",
-                "laravel/tinker": "^3.0",
                 "php": "^8.3",
                 "spatie/laravel-package-tools": "^1.93"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Package\\Shared\\SharedServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Package\\Shared\\": "src/",
@@ -2622,17 +2632,22 @@
             "dist": {
                 "type": "path",
                 "url": "packages/user",
-                "reference": "07ef58e58ba3dbd858ad76dbc3464a85e18e0262"
+                "reference": "e66eedbbc419c02e853827d20220cfc6c6b9df62"
             },
             "require": {
-                "illuminate/support": "^13.0",
                 "laravel/framework": "^13.17",
-                "laravel/tinker": "^3.0",
                 "package/shared": "*@dev",
                 "php": "^8.3",
                 "spatie/laravel-package-tools": "^1.93"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Package\\User\\UserServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Package\\User\\": "src/",

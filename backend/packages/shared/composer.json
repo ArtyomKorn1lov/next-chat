@@ -18,9 +18,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": "^8.3",
-    "illuminate/support": "^13.0",
     "laravel/framework": "^13.17",
-    "laravel/tinker": "^3.0",
     "spatie/laravel-package-tools": "^1.93"
   }
 }
