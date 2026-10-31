@@ -1,0 +1,31 @@
+{
+  "name": "package/user",
+  "description": "User module for Laravel app",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Package\\User\\": "src/",
+      "Package\\User\\Database\\Factories\\": "database/factories/",
+      "Package\\User\\Database\\Seeders\\": "database/seeders/"
+    }
+  },
+  "minimum-stability": "stable",
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../*",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "illuminate/support": "^13.0",
+    "laravel/framework": "^13.17",
+    "laravel/tinker": "^3.0",
+    "spatie/laravel-package-tools": "^1.93",
+    "package/shared": "*@dev"
+  }
+}

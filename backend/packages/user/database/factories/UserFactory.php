@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Factories;
+namespace Package\User\Database\Factories;
 
-use App\User\Domain\ORM\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Package\User\Infrastructure\ORM\User;
 
 /**
  * @extends Factory<User>
