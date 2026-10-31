@@ -11,6 +11,11 @@
     }
   },
   "minimum-stability": "stable",
+  "extra": {
+    "laravel": {
+      "providers": ["Package\\Chat\\ChatServiceProvider"]
+    }
+  },
   "repositories": [
     {
       "type": "path",

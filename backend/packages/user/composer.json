@@ -20,6 +20,11 @@
       }
     }
   ],
+  "extra": {
+    "laravel": {
+      "providers": ["Package\\User\\UserServiceProvider"]
+    }
+  },
   "require": {
     "php": "^8.3",
     "illuminate/support": "^13.0",

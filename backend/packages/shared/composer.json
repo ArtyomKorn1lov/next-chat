@@ -10,6 +10,11 @@
       "Package\\Shared\\Database\\Seeders\\": "database/seeders/"
     }
   },
+  "extra": {
+    "laravel": {
+      "providers": ["Package\\Shared\\SharedServiceProvider"]
+    }
+  },
   "minimum-stability": "stable",
   "require": {
     "php": "^8.3",
