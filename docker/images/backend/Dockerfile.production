@@ -28,16 +28,13 @@ WORKDIR /var/www/html
 RUN groupmod -o -g ${GROUP_ID} www-data \
     && usermod -o -u ${USER_ID} -g www-data www-data
 
-COPY composer.json composer.lock ./
+COPY ./ ./
 
 RUN composer install \
     --no-interaction \
     --no-scripts \
-    --prefer-dist
-
-COPY ./ ./
-
-RUN composer dump-autoload --optimize
+    --prefer-dist \
+    --no-dev
 
 RUN chown -R www-data:www-data \
     /var/www/html/storage \

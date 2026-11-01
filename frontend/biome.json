@@ -1,23 +1,23 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
-  "files": {
-    "ignoreUnknown": true,
-    "includes": [
-      "**",
-      "!!**/node_modules",
-      "!!**/.next",
-      "!!**/dist",
-      "!!**/out",
-      "!!**/build",
-      "!!**/public",
-      "!**/*.min.js",
-      "!**/index.html",
-      "!**/package-lock.json",
-      "!**/next-env.d.ts"
-    ]
-  },
-  "formatter": {
-    "enabled": true,
+      "$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+      "files": {
+        "ignoreUnknown": true,
+        "includes": [
+          "**",
+          "!!**/node_modules",
+          "!!**/.next",
+          "!!**/dist",
+          "!!**/out",
+          "!!**/build",
+          "!!**/public",
+          "!**/*.min.js",
+          "!**/index.html",
+          "!**/package-lock.json",
+          "!**/next-env.d.ts"
+        ]
+      },
+      "formatter": {
+        "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 150,

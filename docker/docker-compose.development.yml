@@ -1,15 +1,16 @@
+name: ChatDevelopment
+
 services:
   frontend:
     build:
-      context: ./frontend
-      dockerfile: Dockerfile
-      args:
-        ENVIRONMENT: ${ENVIRONMENT}
+      context: ../frontend
+      dockerfile: ../docker/images/frontend/Dockerfile.development
     restart: unless-stopped
     ports:
       - "8001:3000"
+      - "8002:3001"
     volumes:
-      - ./frontend/:/app/
+      - ../frontend/:/app/
     networks:
       - chat
 
@@ -19,41 +20,49 @@ services:
     links:
       - mysql
     ports:
-      - "8002:80"
+      - "8003:80"
     volumes:
-      - ./backend:/var/www/html:ro
-      - ./docker/config/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../backend:/var/www/html:ro
+      - ./volumes/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - php
     networks:
       - chat
-    privileged: true
 
   php:
     build:
-      context: ./backend/
-      dockerfile: Dockerfile
+      context: ../backend/
+      dockerfile: ../docker/images/backend/Dockerfile.development
       args:
         USER_ID: ${USER_ID}
         GROUP_ID: ${GROUP_ID}
     restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
     links:
       - mysql
     working_dir: /var/www/html
     volumes:
-      - ./backend:/var/www/html
+      - ../backend:/var/www/html
+      - ./volumes/xdebug/xdebug.ini:/usr/local/etc/php/conf.d/99-xdebug.ini:ro
     networks:
       - chat
 
   mysql:
     build:
-      context: ./docker/mysql
+      context: ./images/mysql
       dockerfile: Dockerfile
     volumes:
       - mysql:/var/lib/mysql
     env_file:
-      - ./docker/config/mysql/env.yml
+      - ./volumes/mysql/env.yml
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
     networks:
       - chat
 
@@ -62,13 +71,16 @@ services:
     links:
       - mysql
     ports:
-      - "8003:80"
+      - "8004:80"
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOSTS=mysql
     volumes:
       - phpmyadmin:/sessions
     restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
     networks:
       - chat
 
