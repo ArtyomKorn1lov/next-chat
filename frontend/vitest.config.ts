@@ -26,15 +26,6 @@ export default defineConfig({
       },
       {
         extends: true,
-        root: fileURLToPath(new URL('./apps/admin', import.meta.url)),
-        test: {
-          name: '@app/admin',
-          environment: 'jsdom',
-          setupFiles: ['./vitest.setup.ts'],
-        },
-      },
-      {
-        extends: true,
         root: fileURLToPath(new URL('./packages/ui', import.meta.url)),
         test: {
           name: '@app/ui',

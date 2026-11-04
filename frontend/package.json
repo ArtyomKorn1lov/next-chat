@@ -6,10 +6,8 @@
   "private": true,
   "scripts": {
     "dev:web": "pnpm --filter @app/web dev",
-    "dev:admin": "pnpm --filter @app/admin dev",
     "dev": "pnpm --recursive dev",
     "build:web": "pnpm --filter @app/web build",
-    "build:admin": "pnpm --filter @app/admin build",
     "build": "pnpm --recursive build",
     "start": "pnpm --recursive start",
     "typecheck": "pnpm --recursive --if-present run typecheck",

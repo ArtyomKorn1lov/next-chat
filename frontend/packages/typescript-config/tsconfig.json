@@ -23,8 +23,7 @@
     "paths": {
       "@app/ui/*": ["../ui/src/*"],
       "@app/shared/*": ["../shared/src/*"],
-      "@app/web/*": ["../../apps/web/*"],
-      "@app/admin/*": ["../../apps/admin/*"]
+      "@app/web/*": ["../../apps/web/*"]
     }
   }
 }
