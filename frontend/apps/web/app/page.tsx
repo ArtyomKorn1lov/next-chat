@@ -1,6 +1,29 @@
+'use client';
+import type Echo from 'laravel-echo';
+import { useEffect } from 'react';
 import { Avatar, IconButton, InputBase, SvgIcon } from '@mui/material';
+import { createSocket } from '@app/web/app/reverb';
+
+const channel: string = 'chat.message';
 
 export default function Home() {
+  useEffect(() => {
+    const socket: Echo<'reverb'> = createSocket();
+    socket.channel(channel).listen('.sent', (event: any) => {
+      const messageText: string = `Новое сообщение: ${event.text}`;
+      console.log(messageText);
+      alert(messageText);
+    });
+    return () => {
+      socket.leave(channel);
+      socket.disconnect();
+    };
+  }, []);
+
+  const sendMessage = () => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/messages`);
+  };
+
   return (
     <main className="b-chat">
       <header className="b-chat-header">
@@ -12,9 +35,7 @@ export default function Home() {
           </p>
         </div>
       </header>
-      <section
-        className="b-chat__history"
-      >
+      <section className="b-chat__history">
         <ol className="b-chat__messages">
           <li className="b-chat__date">Сегодня</li>
 
@@ -29,9 +50,7 @@ export default function Home() {
             <p className="b-chat-message__text">Тестовое сообщение 2</p>
             <div className="b-chat-message__meta">
               <time dateTime="10:25">10:25</time>
-              <span>
-                ✓✓
-              </span>
+              <span>✓✓</span>
             </div>
           </li>
 
@@ -46,9 +65,7 @@ export default function Home() {
             <p className="b-chat-message__text">Тестовое сообщение 4</p>
             <div className="b-chat-message__meta">
               <time dateTime="10:27">10:27</time>
-              <span>
-                ✓✓
-              </span>
+              <span>✓✓</span>
             </div>
           </li>
 
@@ -73,6 +90,7 @@ export default function Home() {
         <IconButton
           className="b-btn"
           type="button"
+          onClick={sendMessage}
         >
           <SvgIcon
             className="b-btn__icon"

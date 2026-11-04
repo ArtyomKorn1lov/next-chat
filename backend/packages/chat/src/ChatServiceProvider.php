@@ -19,7 +19,7 @@ class ChatServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('chat')
-            ->hasRoute('api')
+            ->hasRoutes('api', 'channels')
             ->hasConfigFile()
             ->discoversMigrations()
             ->runsMigrations();

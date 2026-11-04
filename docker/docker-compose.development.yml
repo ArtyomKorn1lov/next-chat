@@ -32,6 +32,7 @@ services:
       - chat
 
   php:
+    image: chat-php-development
     build:
       context: ../backend/
       dockerfile: ../docker/images/backend/Dockerfile.development
@@ -48,6 +49,43 @@ services:
     volumes:
       - ../backend:/var/www/html
       - ./volumes/xdebug/xdebug.ini:/usr/local/etc/php/conf.d/99-xdebug.ini:ro
+    networks:
+      - chat
+
+  reverb:
+    image: chat-php-development
+    command: php artisan reverb:start --host=0.0.0.0 --port=8080
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ../backend:/var/www/html
+    ports:
+      - "8005:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "php", "-r", "exit(@fsockopen('127.0.0.1', 8080) ? 0 : 1);" ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks:
+      - chat
+
+  queue:
+    image: chat-php-development
+    command: [ "php", "artisan", "queue:work", "--sleep=1", "--tries=3", "--timeout=60" ]
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ../backend:/var/www/html
+    depends_on:
+      mysql:
+        condition: service_healthy
+      reverb:
+        condition: service_healthy
+    links:
+      - mysql
     networks:
       - chat
 

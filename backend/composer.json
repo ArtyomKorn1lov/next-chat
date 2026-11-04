@@ -21,11 +21,12 @@
         "php": "^8.3",
         "illuminate/support": "^13.0",
         "laravel/framework": "^13.17",
+        "laravel/reverb": "*",
         "laravel/tinker": "^3.0",
-        "spatie/laravel-package-tools": "^1.93",
+        "package/chat": "*@dev",
         "package/shared": "*@dev",
         "package/user": "*@dev",
-        "package/chat": "*@dev"
+        "spatie/laravel-package-tools": "^1.93"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "*",
