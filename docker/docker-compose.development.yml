@@ -5,6 +5,9 @@ services:
     build:
       context: ../frontend
       dockerfile: ../docker/images/frontend/Dockerfile.development
+      args:
+        USER_ID: ${USER_ID}
+        GROUP_ID: ${GROUP_ID}
     restart: unless-stopped
     ports:
       - "8001:3000"
